@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useCart } from './CartContext';
-import productsData from './data/products.json'; // Your local JSON file
+import productsData from './data/products.json'; // Import local JSON data
 import './ProductList.css'; // Your CSS file for styling
 
-const ProductList = () => {
+const ProductList = ({ addToCart }) => {
   const [products, setProducts] = useState([]);
-  const { addToCart } = useCart(); // Access addToCart from the context
 
   useEffect(() => {
     setProducts(productsData); // Set products data from local JSON
